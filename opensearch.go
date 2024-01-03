@@ -212,30 +212,3 @@ func (os *OpenSearch) Document(client *osv3.Client, op int, indexName string, do
 	}
 	return stats, nil
 }
-
-/*
-func (os *OpenSearch) CreateDocument(client *osv3.Client, doc string, indexName string, docId string) (interface{}, error) {
-	req, err := osapi.DocumentCreateReq{
-		Index:      indexName,
-		DocumentID: docId,
-		Body:       strings.NewReader(doc),
-	}
-	if err != nil {
-		return nil, err
-	}
-	stats, resp, err := os.do(client, context.Background(), req, osapi.DocumentCreateResp{})
-	return stats, resp, nil
-}
-
-func (os *OpenSearch) DeleteDocument(client *osv3.Client, indexName string, docId string) (interface{}, error) {
-	req, err := osapi.DocumentDeleteReq{
-		Index:      indexName,
-		DocumentID: docId,
-	}
-	if err != nil {
-		return nil, err
-	}
-	stats, resp, err := os.do(client, context.Background(), req, osapi.DocumentDeleteResp{})
-	return stats, resp, nil
-}
-*/
